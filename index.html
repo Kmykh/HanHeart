@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinguinita</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="heartContainer"></div>
+  <audio id="audioPlayer">
+    <source src="./SinB - Loveable » A Love So Beautiful OST [Traducida al Español].mp3" type="audio/mp3">
+  </audio>
+  <span id="playMusic" style="cursor:pointer;">❤️ Haz click aquí</span>
+<main>
+    <div class="stack">
+      <div class="card">
+        <img src="./1.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="./2.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="./3.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="./4.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="./5.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="./6.jpg" alt="" />
+      </div>
+    </div>
+    <div class="content">
+      <h1>Para la mujer más bella</h1>
+      <p>
+        Mia principessa, <br>
+        no se como empezar, hay tantas formas, tantas maneras de poder escribir un texto, pero no quiero que sea cualquier texto, porque no va dedicado a cualquier persona, este escritvo va a mi razon de ser, a la persona
+        mas increible en la fas de la tierra, aquella que se ha robado mi corazon, esa maravilla persona me ha desmostrado que el AMOR  existe , que ha estado conmigo en las buenas , malas y peores, aquella mujer del que me siento 
+        orgulloso, el cual me da energias y ganas de seguir adelante , esa mujer que me ha demostrado que el amor no es solo una palabra, sino un sentimiento que se demuestra con hechos, esa mujer tan bella como el sol, tan
+        hermosa como la luna, tan dulce como la miel, tan tierna como un bebe, tan fuerte como un leon, tan valiente como un guerrero, tan inteligente como un genio, tan unica como una estrella, tan especial como un tesoro
+        Mi debilidad tiene tu nombre y apellido, unos ojos preciosos una carita encantadora y un alma que enamora.TE AMOOO mi bella lobita
+        <br>
+        Con todo mi amor,<br>
+        Jhordi       
+      </p>
+    </div>
+  </main>
+  <script>
+    document.getElementById('playMusic').addEventListener('click', function() {
+      var audioPlayer = document.getElementById('audioPlayer');
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+      setInterval(createHearts, 2000); 
+    });
+
+    function createHearts() {
+      const heartContainer = document.getElementById('heartContainer');
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 2 + 7 + 's'; 
+        heartContainer.appendChild(heart);
+        
+
+        setTimeout(() => {
+          heart.remove();
+        }, 9000);
+      }
+    }
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
